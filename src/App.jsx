@@ -27,7 +27,7 @@ export default function App() {
     }
 
     // 2. Prepare Default or Custom Message
-    const defaultText = customMsg || `Hi! I came from ukstudentdesk and need urgent academic help with my UK ${selectedLevel} ${selectedSubject}. Please share pricing and details with me.`;
+    const defaultText = customMsg || `Hi, can I get more info about this?`;
     const encodedText = encodeURIComponent(defaultText);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
 
@@ -41,7 +41,7 @@ export default function App() {
       setRedirectCountdown(prev => {
         if (prev <= 1) {
           clearInterval(timer);
-          redirectToWhatsApp(`Hi! I came from ukstudentdesk and need urgent academic help with my UK assignment/dissertation. Please share pricing and details with me.`);
+          redirectToWhatsApp(`Hi, can I get more info about this?`);
           return 0;
         }
         return prev - 1;
@@ -227,7 +227,7 @@ export default function App() {
           {/* Trigger Custom WhatsApp Redirect */}
           <button
             className="btn-whatsapp-large"
-            onClick={() => redirectToWhatsApp(`Hi, I need an instant quote for a UK ${selectedLevel} level ${selectedSubject}. Please send price options.`)}
+            onClick={() => redirectToWhatsApp(`Hi, can I get more info about this?`)}
           >
             <Zap size={20} fill="#ffffff" /> Get {selectedSubject} Quote on WhatsApp
           </button>
@@ -324,7 +324,7 @@ export default function App() {
           <div style={{ marginTop: '1.8rem', textAlign: 'center' }}>
             <button 
               className="btn-whatsapp-large" 
-              onClick={() => redirectToWhatsApp('Hi! I have a question about my assignment deadline.')}
+              onClick={() => redirectToWhatsApp('Hi, can I get more info about this?')}
             >
               <MessageCircle size={22} /> Have Questions? Ask Us on WhatsApp
             </button>
